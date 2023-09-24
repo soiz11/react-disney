@@ -9,27 +9,33 @@ const Header = () => {
 
     const menu = [{
         name:"HOME",
-        icon:HiHome
+        icon:HiHome,
+        id:0
     },
     {
         name:"SEARCH",
-        icon:HiMagnifyingGlass
+        icon:HiMagnifyingGlass,
+        id:1
     },
     {
         name:"WATCH LIST",
-        icon:HiPlus
+        icon:HiPlus,
+        id:2
     },
     {
         name:"ORIGINALS",
-        icon:HiStar
+        icon:HiStar,
+        id:3
     },
     {
         name:"MOVIES",
-        icon:HiPlayCircle
+        icon:HiPlayCircle,
+        id:4
     },
     {
         name:"SERIES",
-        icon:HiTv
+        icon:HiTv,
+        id:5
     }
 
 ]
@@ -39,17 +45,17 @@ const Header = () => {
             <img src={logo} alt='' className='w-[80px] md:w-[115px] object-cover'/>
             <div className='hidden md:flex gap-8'>
                 {menu.map((item)=>(
-                     <HeaderItem name={item.name} Icon={item.icon}/>
+                     <HeaderItem name={item.name} Icon={item.icon} key={item.id}/>
                 ))}
             </div>
 
             <div className='flex md:hidden gap-1'>
                 {menu.map((item,index)=>index<3&&(
-                     <HeaderItem name={''} Icon={item.icon}/>
+                     <HeaderItem name={''} Icon={item.icon} key={item.id}/>
                 ))}
 
             <div className='md:hidden' onClick={()=>{setToggler(!toggler)}}>
-                <HeaderItem name={""} Icon={HiDotsVertical}/>
+                <HeaderItem name={""} Icon={HiDotsVertical} />
                 {toggler?<div className='absolute mt-3 bg-[#121212] border-[1px] border-gray-700 p-3 px-5 py-3'>
                 {menu.map((item,index)=>index>2&&(
                      <HeaderItem name={item.name} Icon={item.icon}/>
