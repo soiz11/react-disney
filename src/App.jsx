@@ -1,17 +1,18 @@
-import { useState } from 'react'
-import './App.css'
-import Header from './Components/Header'
-import Slider from './Components/Slider'
+import { useState } from "react";
+import "./App.css";
+import Header from "./Components/Header";
+import Slider from "./Components/Slider";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
-    <Header/>
-    <Slider/>
+      <Header />
+      <Slider />
     </>
-  )
+  );
 }
+//hello
 
-export default App
+export default App;
